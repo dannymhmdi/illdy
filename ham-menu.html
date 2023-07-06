@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/all.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-bar {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            /* height: 50px; */
+            /* background-color: aqua; */
+        }
+
+        label {
+            padding: 16px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu>li {
+            overflow: hidden;
+        }
+
+
+        .menu {
+            position: absolute;
+            top: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            /* background-color: orangered; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            background-color: #fff;
+            margin-top: 40px;
+        }
+
+        .menu>li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding: 8px; */
+            height: 40px;
+            width: 100%;
+            color: white;
+            background-color: #222;
+            border-bottom: 1px solid red;
+        }
+
+        #checkbox ~.menu li {
+            /* height: 0; */
+            /* margin: 0; */
+            /* padding: 0; */
+            width: 0;
+            border: 0;
+            transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        #checkbox:checked~.menu li {
+            border: 1px solid #333;
+            /* height: 40px; */
+            width: 100%;
+            transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="logo"><img src="library/cropped-footer-logo-1.png" alt=""></div>
+        <input type="checkbox" id="checkbox" hidden>
+        <label for="checkbox"><i class="fa-solid fa-bars fa-2x"></i></label>
+        <ul class="menu">
+            <li><a href="">One</a></li>
+            <li><a href="">Two</a></li>
+            <li><a href="">Three</a></li>
+            <li><a href="">Four</a></li>
+            <li><a href="">Five</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
